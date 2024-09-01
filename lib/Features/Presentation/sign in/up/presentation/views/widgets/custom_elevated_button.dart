@@ -18,7 +18,7 @@ class CustomElevatedButton extends StatelessWidget {
         shadowColor:
             WidgetStateProperty.resolveWith((states) => TColor.primary),
         minimumSize: WidgetStateProperty.resolveWith(
-            (states) => const Size(double.maxFinite, 50)),
+            (states) => const Size(double.maxFinite, 56)),
         shape: WidgetStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),

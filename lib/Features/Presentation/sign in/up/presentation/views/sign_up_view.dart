@@ -1,3 +1,4 @@
+import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/sign_up_view_body.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -17,6 +18,7 @@ class SignUpView extends StatelessWidget {
           ),
         ),
       ),
+      body: const SignUpViewBody(),
     );
     ;
   }
