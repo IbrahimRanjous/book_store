@@ -1,20 +1,17 @@
-import 'package:book_store/Features/Presentation/onboarding/presentation/views/welcom_view.dart';
+import 'package:book_store/Features/Presentation/onboarding/presentation/views/widgets/bottom_part_body.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/widgets/custom_text.dart';
-import 'package:book_store/Features/Presentation/onboarding/presentation/views/widgets/custom_text_botton.dart';
-import 'package:book_store/Features/Presentation/onboarding/presentation/views/widgets/dotes_side_show.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class OnboadrdingView extends StatefulWidget {
-  const OnboadrdingView({super.key});
+class OnboardingView extends StatefulWidget {
+  const OnboardingView({super.key});
 
   @override
-  State<OnboadrdingView> createState() => _OnboadrdingViewState();
+  State<OnboardingView> createState() => _OnboardingViewState();
 }
 
-class _OnboadrdingViewState extends State<OnboadrdingView> {
+class _OnboardingViewState extends State<OnboardingView> {
   List pageArr = [
     {
       "title": 'Discounted \nSecondhand Books',
@@ -70,10 +67,8 @@ class _OnboadrdingViewState extends State<OnboadrdingView> {
                     children: [
                       customText(
                         text: pObJ['title'].toString(),
-                        textStyle: TextStyle(
+                        textStyle: Styles.TextStyle30.copyWith(
                           color: TColor.primary,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w600,
                         ),
                       ),
                       const SizedBox(
@@ -98,44 +93,11 @@ class _OnboadrdingViewState extends State<OnboadrdingView> {
                 );
               },
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomTextButton(
-                        onPressed: () => Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const WelcomView())),
-                        text: 'Skip',
-                      ),
-                      dotsSideShow(
-                        pageArr: pageArr,
-                        page: page,
-                        mediaQuery: mediaQuery,
-                      ),
-                      CustomTextButton(
-                        onPressed: () {
-                          if (page < 2) {
-                            page++;
-                            controller.jumpToPage(page);
-                          } else {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const WelcomView()));
-                          }
-                        },
-                        text: 'Next',
-                      ),
-                      SizedBox(
-                        height: mediaQuery.height * .12,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            bottomPartBody(
+              mediaQuery: mediaQuery,
+              pageArr: pageArr,
+              page: page,
+              controller: controller,
             ),
           ],
         ),
