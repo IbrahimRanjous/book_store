@@ -1,3 +1,5 @@
+import 'package:book_store/Features/Presentation/home/presentation/views/home_view.dart';
+import 'package:book_store/Features/Presentation/mainTab/presentation/views/main_tab_view.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/onboarding_view.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/welcom_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/forgot_password_view.dart';
@@ -12,6 +14,8 @@ class AppRouter {
   static const kLogInView = '/LogInView';
   static const kForgotPasswordView = '/forgotPasswordView';
   static const kHelpUsView = '/helpUsView';
+  static const kMainTabView = '/mainTabView';
+  static const kHomeView = '/homeView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -38,6 +42,14 @@ class AppRouter {
       GoRoute(
         path: kHelpUsView,
         builder: (context, state) => const HelpUsView(),
+      ),
+      GoRoute(
+        path: kMainTabView,
+        builder: (context, state) => const MainTabView(),
+      ),
+      GoRoute(
+        path: kHomeView,
+        builder: (context, state) => const HomeView(),
       ),
     ],
   );

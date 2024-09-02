@@ -1,8 +1,10 @@
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/widgets/custom_text_botton.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/custom_drop_down_button.dart';
+import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HelpUsViewBody extends StatefulWidget {
   const HelpUsViewBody({super.key});
@@ -48,11 +50,16 @@ class _HelpUsViewBodyState extends State<HelpUsViewBody> {
               hint: 'City',
               itemsList: ['city1', 'city2'],
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [CustomTextButton(text: 'Skip')],
+                children: [
+                  CustomTextButton(
+                    text: 'Skip',
+                    onPressed: () => context.go(AppRouter.kMainTabView),
+                  )
+                ],
               ),
             )
           ],

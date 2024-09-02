@@ -90,7 +90,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               height: 15,
             ),
             CustomElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.go(AppRouter.kMainTabView),
               title: 'Log In',
             ),
           ],
