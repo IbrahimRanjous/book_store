@@ -1,8 +1,10 @@
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/custom_text_field.dart';
+import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LogInViewBody extends StatefulWidget {
   const LogInViewBody({
@@ -70,10 +72,18 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       color: TColor.subTitle.withOpacity(.5),
                     )),
                 const Spacer(),
-                Text('Forgot Your Password?',
-                    style: Styles.TextStyle15.copyWith(
-                      color: TColor.subTitle.withOpacity(.5),
-                    )),
+                TextButton(
+                  style: ButtonStyle(
+                    overlayColor: getColor(Colors.white, TColor.primaryLight),
+                  ),
+                  onPressed: () {
+                    context.push(AppRouter.kForgotPasswordView);
+                  },
+                  child: Text('Forgot Your Password?',
+                      style: Styles.TextStyle15.copyWith(
+                        color: TColor.primary,
+                      )),
+                ),
               ],
             ),
             const SizedBox(
@@ -87,5 +97,10 @@ class _LogInViewBodyState extends State<LogInViewBody> {
         ),
       ),
     );
+  }
+
+  WidgetStateProperty<Color>? getColor(Color color, Color colorPressed) {
+    return WidgetStateProperty.resolveWith((states) =>
+        states.contains(WidgetState.pressed) ? colorPressed : color);
   }
 }

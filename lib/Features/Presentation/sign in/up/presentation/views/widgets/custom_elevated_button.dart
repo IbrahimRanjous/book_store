@@ -11,7 +11,7 @@ class CustomElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: getColor(Colors.white, TColor.primary),
         foregroundColor: getColor(TColor.primary, Colors.white),

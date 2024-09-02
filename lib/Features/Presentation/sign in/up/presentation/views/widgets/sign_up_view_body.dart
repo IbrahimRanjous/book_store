@@ -1,8 +1,10 @@
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/custom_text_field.dart';
+import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
@@ -91,7 +93,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               height: 15,
             ),
             CustomElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push(AppRouter.kHelpUsView);
+              },
               title: 'Sign In',
             ),
           ],
