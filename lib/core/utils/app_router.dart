@@ -1,7 +1,10 @@
+import 'package:book_store/Features/Presentation/cart/presentation/views/cart_view.dart';
 import 'package:book_store/Features/Presentation/home/presentation/views/home_view.dart';
 import 'package:book_store/Features/Presentation/mainTab/presentation/views/main_tab_view.dart';
+import 'package:book_store/Features/Presentation/menu/presentation/views/menu_view.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/onboarding_view.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/welcom_view.dart';
+import 'package:book_store/Features/Presentation/search/presentation/views/search_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/forgot_password_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/help_us_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/log_in_view.dart';
@@ -16,6 +19,9 @@ class AppRouter {
   static const kHelpUsView = '/helpUsView';
   static const kMainTabView = '/mainTabView';
   static const kHomeView = '/homeView';
+  static const kSearchView = '/searchView';
+  static const kMenuView = '/menuView';
+  static const kCartView = '/cartView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -50,6 +56,18 @@ class AppRouter {
       GoRoute(
         path: kHomeView,
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: kSearchView,
+        builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: kMenuView,
+        builder: (context, state) => const MenuView(),
+      ),
+      GoRoute(
+        path: kCartView,
+        builder: (context, state) => const CartView(),
       ),
     ],
   );

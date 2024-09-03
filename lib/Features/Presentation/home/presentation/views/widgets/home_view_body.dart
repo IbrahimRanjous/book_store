@@ -28,7 +28,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      AppBar(
+                      AppBar( 
                         elevation: 0,
                         backgroundColor: Colors.transparent,
                         title: Text(
