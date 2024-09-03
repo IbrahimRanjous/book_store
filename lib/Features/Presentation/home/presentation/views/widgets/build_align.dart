@@ -14,7 +14,7 @@ class buildAlign extends StatelessWidget {
     return Align(
       child: Transform.scale(
         scale: 1.4,
-        origin: Offset(0, mediaQuery.width * .7),
+        origin: Offset(0, mediaQuery.width * 1.03),
         child: Container(
           width: mediaQuery.width,
           height: mediaQuery.width,

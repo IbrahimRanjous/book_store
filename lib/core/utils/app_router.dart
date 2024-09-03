@@ -3,7 +3,7 @@ import 'package:book_store/Features/Presentation/home/presentation/views/home_vi
 import 'package:book_store/Features/Presentation/mainTab/presentation/views/main_tab_view.dart';
 import 'package:book_store/Features/Presentation/menu/presentation/views/menu_view.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/onboarding_view.dart';
-import 'package:book_store/Features/Presentation/onboarding/presentation/views/welcom_view.dart';
+import 'package:book_store/Features/Presentation/onboarding/presentation/views/welcome_view.dart';
 import 'package:book_store/Features/Presentation/search/presentation/views/search_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/forgot_password_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/help_us_view.dart';
@@ -31,7 +31,7 @@ class AppRouter {
       ),
       GoRoute(
         path: kWelcomeView,
-        builder: (context, state) => const WelcomView(),
+        builder: (context, state) => const WelcomeView(),
       ),
       GoRoute(
         path: kSignUpView,

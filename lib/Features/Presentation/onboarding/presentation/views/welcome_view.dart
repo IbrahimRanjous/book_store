@@ -1,13 +1,13 @@
 import 'package:book_store/core/utils/app_router.dart';
-import 'package:book_store/core/widgets/custom_material_button.dart';
+import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/widgets/custom_material_button.dart';
 import 'package:book_store/Features/Presentation/onboarding/presentation/views/widgets/custom_text.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class WelcomView extends StatelessWidget {
-  const WelcomView({super.key});
+class WelcomeView extends StatelessWidget {
+  const WelcomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

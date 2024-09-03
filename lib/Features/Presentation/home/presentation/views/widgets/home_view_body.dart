@@ -1,5 +1,7 @@
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/best_selles_body.dart';
 import 'package:book_store/Features/Presentation/home/presentation/views/widgets/build_align.dart';
-import 'package:book_store/core/utils/styles.dart';
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/build_app_bar.dart';
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/custom_carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -26,24 +28,16 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   buildAlign(mediaQuery: mediaQuery),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      AppBar( 
-                        elevation: 0,
-                        backgroundColor: Colors.transparent,
-                        title: Text(
-                          'Our Top Picks',
-                          style:
-                              Styles.TextStyle24.copyWith(color: Colors.white),
-                        ),
-                        leading: Container(),
-                        actions: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.menu),
-                          ),
-                        ],
-                      )
+                      SizedBox(
+                        height: mediaQuery.width * .12,
+                      ),
+                      const BuildAppBar(),
+                      SizedBox(
+                        height: mediaQuery.width * 0.08,
+                      ),
+                      CustomCarouselSlider(mediaQuery: mediaQuery),
+                      const BestSellesBody()
                     ],
                   )
                 ],

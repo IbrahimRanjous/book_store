@@ -37,6 +37,8 @@ class _MainTabViewState extends State<MainTabView>
       bottomNavigationBar: BottomAppBar(
         color: TColor.primary,
         child: TabBar(
+          dividerColor: Colors.transparent,
+          indicatorColor: Colors.transparent,
           unselectedLabelColor: Colors.white,
           labelColor: TColor.text,
           controller: controller,
