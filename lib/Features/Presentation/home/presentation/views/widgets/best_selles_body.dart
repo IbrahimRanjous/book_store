@@ -1,22 +1,60 @@
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class BestSellesBody extends StatelessWidget {
+class BestSellesBody extends StatefulWidget {
   const BestSellesBody({super.key});
 
   @override
+  State<BestSellesBody> createState() => _BestSellesBodyState();
+}
+
+class _BestSellesBodyState extends State<BestSellesBody> {
+  List<Map<String, dynamic>> bestSellerArr = [
+    {
+      'name': 'Fatherhood',
+      'auther': 'by Christopher Wilson',
+      'image': 'assets/images/The Zoo.png',
+      'rating': 4.0,
+    },
+    {
+      'name': 'In A Land Of Paper Gods',
+      'auther': 'by Rebecca Mackenzie',
+      'image': 'assets/images/In A Land Of Paper Gods.png',
+      'rating': 5.0,
+    },
+    {
+      'name': 'Tattletale',
+      'auther': 'by Sarah J. Noughton',
+      'image': 'assets/images/Tattletale-1.png',
+      'rating': 3.0,
+    },
+  ];
+
+  @override
   Widget build(BuildContext context) {
+    Size mediaQuery = MediaQuery.of(context).size;
     return Column(
       children: [
-        AppBar(
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'Our Top Picks',
-            style: Styles.TextStyle24,
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Best Sellers',
+                style: Styles.TextStyle24,
+              ),
+            ],
           ),
-          leading: Container(),
-          leadingWidth: 1,
+        ),
+        SizedBox(
+          height: mediaQuery.width,
+          child: ListView.builder(
+            itemCount: bestSellerArr.length,
+            itemBuilder: (context, index) =>
+                BookItem(itemsObj: bestSellerArr[index]),
+          ),
         ),
       ],
     );
