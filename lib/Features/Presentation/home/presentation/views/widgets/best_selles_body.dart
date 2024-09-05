@@ -1,4 +1,5 @@
 import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item.dart';
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item_with_rating.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -13,19 +14,19 @@ class _BestSellesBodyState extends State<BestSellesBody> {
   List<Map<String, dynamic>> bestSellerArr = [
     {
       'name': 'Fatherhood',
-      'auther': 'by Christopher Wilson',
+      'author': 'by Christopher Wilson',
       'image': 'assets/images/The Zoo.png',
       'rating': 4.0,
     },
     {
       'name': 'In A Land Of Paper Gods',
-      'auther': 'by Rebecca Mackenzie',
+      'author': 'by Rebecca Mackenzie',
       'image': 'assets/images/In A Land Of Paper Gods.png',
       'rating': 5.0,
     },
     {
       'name': 'Tattletale',
-      'auther': 'by Sarah J. Noughton',
+      'author': 'by Sarah J. Noughton',
       'image': 'assets/images/Tattletale-1.png',
       'rating': 3.0,
     },
@@ -51,9 +52,11 @@ class _BestSellesBodyState extends State<BestSellesBody> {
         SizedBox(
           height: mediaQuery.width,
           child: ListView.builder(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
+            scrollDirection: Axis.horizontal,
             itemCount: bestSellerArr.length,
             itemBuilder: (context, index) =>
-                BookItem(itemsObj: bestSellerArr[index]),
+                BookItemWithRating(itemsObj: bestSellerArr[index]),
           ),
         ),
       ],

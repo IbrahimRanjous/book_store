@@ -19,19 +19,20 @@ class BookItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
+          width: mediaQuery.width * .4,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
               boxShadow: const [
                 BoxShadow(
-                    color: Colors.black38, offset: Offset(2, 8), blurRadius: 8)
+                    color: Colors.black38, offset: Offset(0, 2), blurRadius: 8)
               ]),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: Image.asset(
               itemsObj['image']?.toString() ?? '',
               fit: BoxFit.cover,
-              width: mediaQuery.width * .32,
+              width: mediaQuery.width * .4,
               height: mediaQuery.width * 0.50,
             ),
           ),

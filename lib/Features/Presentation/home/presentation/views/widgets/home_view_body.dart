@@ -2,6 +2,7 @@ import 'package:book_store/Features/Presentation/home/presentation/views/widgets
 import 'package:book_store/Features/Presentation/home/presentation/views/widgets/build_align.dart';
 import 'package:book_store/Features/Presentation/home/presentation/views/widgets/build_app_bar.dart';
 import 'package:book_store/Features/Presentation/home/presentation/views/widgets/custom_carousel_slider.dart';
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/genres_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -37,7 +38,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                         height: mediaQuery.width * 0.08,
                       ),
                       CustomCarouselSlider(mediaQuery: mediaQuery),
-                      const BestSellesBody()
+                      const BestSellesBody(),
+                      const GenresViewBody(),
                     ],
                   )
                 ],
