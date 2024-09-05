@@ -1,10 +1,12 @@
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/best_selles_body.dart';
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/build_align.dart';
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/build_app_bar.dart';
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/custom_carousel_slider.dart';
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/genres_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+import 'best_selles_body.dart';
+import 'build_align.dart';
+import 'build_app_bar.dart';
+import 'custom_carousel_slider.dart';
+import 'genres_view_body.dart';
+import 'recently_viewed_body.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -40,6 +42,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       CustomCarouselSlider(mediaQuery: mediaQuery),
                       const BestSellesBody(),
                       const GenresViewBody(),
+                      const RecentlyViewedBody(),
                     ],
                   )
                 ],
