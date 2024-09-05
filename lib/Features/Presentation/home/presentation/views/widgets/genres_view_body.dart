@@ -2,6 +2,8 @@ import 'package:book_store/Features/Presentation/home/presentation/views/widgets
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/utils/color_extenstion.dart';
+
 class GenresViewBody extends StatefulWidget {
   const GenresViewBody({super.key});
 
@@ -15,14 +17,14 @@ class _GenresViewBodyState extends State<GenresViewBody> {
       'name': 'Graphic Novels',
       'image': 'assets/images/Group 13.png',
     },
-    // {
-    //   'name': 'Graphic Novels',
-    //   'image': 'assets/images/Group 13.png',
-    // },
-    // {
-    //   'name': 'Graphic Novels',
-    //   'image': 'assets/images/Group 13.png',
-    // },
+    {
+      'name': 'Graphic Novels',
+      'image': 'assets/images/Group 13.png',
+    },
+    {
+      'name': 'Graphic Novels',
+      'image': 'assets/images/Group 13.png',
+    },
   ];
 
   @override
@@ -43,13 +45,17 @@ class _GenresViewBodyState extends State<GenresViewBody> {
           ),
         ),
         SizedBox(
-          height: mediaQuery.width,
+          height: mediaQuery.width * .55,
           child: ListView.builder(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
             scrollDirection: Axis.horizontal,
             itemCount: genresArr.length,
-            itemBuilder: (context, index) =>
-                GenresItem(itemsObj: genresArr[index]),
+            itemBuilder: (context, index) => GenresItem(
+              itemsObj: genresArr[index],
+              itemColor: index % 2 == 0
+                  ? TColor.genresColors[0]
+                  : TColor.genresColors[1],
+            ),
           ),
         ),
       ],
