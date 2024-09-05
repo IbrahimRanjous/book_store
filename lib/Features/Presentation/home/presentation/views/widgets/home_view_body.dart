@@ -6,6 +6,7 @@ import 'build_align.dart';
 import 'build_app_bar.dart';
 import 'custom_carousel_slider.dart';
 import 'genres_view_body.dart';
+import 'monthly_newsletter_body.dart';
 import 'recently_viewed_body.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -43,6 +44,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                       const BestSellesBody(),
                       const GenresViewBody(),
                       const RecentlyViewedBody(),
+                      const MonthlyNewsletterBody(),
+                      SizedBox(
+                        height: mediaQuery.width * 0.3,
+                      ),
                     ],
                   )
                 ],
