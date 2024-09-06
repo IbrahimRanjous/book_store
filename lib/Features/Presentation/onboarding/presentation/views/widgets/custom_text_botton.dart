@@ -6,9 +6,11 @@ class CustomTextButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
+    required this.color,
   });
 
   final String text;
+  final Color color;
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,8 @@ class CustomTextButton extends StatelessWidget {
       onTap: onPressed,
       child: Text(
         text,
-        style: TextStyle(
-            color: TColor.primary, fontWeight: FontWeight.w700, fontSize: 17),
+        style:
+            TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: 17),
       ),
     );
   }

@@ -58,6 +58,7 @@ class _HelpUsViewBodyState extends State<HelpUsViewBody> {
                   CustomTextButton(
                     text: 'Skip',
                     onPressed: () => context.go(AppRouter.kMainTabView),
+                    color: TColor.primary,
                   )
                 ],
               ),

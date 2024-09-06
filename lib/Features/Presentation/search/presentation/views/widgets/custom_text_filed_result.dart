@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/utils/color_extenstion.dart';
 import '../../../../../../core/utils/styles.dart';
 
-class CustomTextSearch extends StatelessWidget {
-  const CustomTextSearch({
+class CustomTextFiledResult extends StatelessWidget {
+  const CustomTextFiledResult({
     super.key,
     required this.controller,
     required this.hintText,
     this.obscureText = false,
-    this.onTap,
+    this.onChanged,
   });
 
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
-  final Function()? onTap;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,16 +23,12 @@ class CustomTextSearch extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
-        onTap: onTap,
+        onChanged: onChanged,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
           prefixIcon: const Icon(
             (Icons.search),
-          ),
-          suffixIcon: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.tune),
           ),
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 15),

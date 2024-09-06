@@ -4,6 +4,8 @@ import 'package:book_store/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../../core/utils/color_extenstion.dart';
+
 class bottomPartBody extends StatelessWidget {
   const bottomPartBody({
     super.key,
@@ -30,7 +32,7 @@ class bottomPartBody extends StatelessWidget {
             children: [
               CustomTextButton(
                 onPressed: () => context.go(AppRouter.kWelcomeView),
-                text: 'Skip',
+                text: 'Skip', color: TColor.primary,
               ),
               SizedBox(
                 width: mediaQuery.width * .05,
@@ -52,7 +54,7 @@ class bottomPartBody extends StatelessWidget {
                     context.go(AppRouter.kWelcomeView);
                   }
                 },
-                text: 'Next',
+                text: 'Next', color: TColor.primary,
               ),
               SizedBox(
                 height: mediaQuery.height * .12,

@@ -114,14 +114,14 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     ),
                     CustomTextButton(
                       text: 'Terms',
-                      onPressed: () => context.pop(),
+                      onPressed: () => context.pop(), color: TColor.primary,
                     ),
                     SizedBox(
                       width: mediaQuery.width * 0.05,
                     ),
                     CustomTextButton(
                       text: 'Privacy',
-                      onPressed: () => context.pop(),
+                      onPressed: () => context.pop(), color: TColor.primary,
                     ),
                   ],
                 ),

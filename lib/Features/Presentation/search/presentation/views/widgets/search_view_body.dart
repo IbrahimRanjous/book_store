@@ -1,7 +1,8 @@
 import 'package:book_store/Features/Presentation/search/presentation/views/widgets/custom_text_search.dart';
-import 'package:book_store/Features/Presentation/search/presentation/views/widgets/grid_item.dart';
-import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../../core/utils/app_router.dart';
+import 'custom_grid_view.dart';
 import 'horizontal_filter_list.dart';
 
 class SearchViewBody extends StatefulWidget {
@@ -94,6 +95,9 @@ class _SearchViewBodyState extends State<SearchViewBody> {
               height: 30,
             ),
             CustomTextSearch(
+              onTap: () {
+                context.push(AppRouter.kSearchFocusView);
+              },
               controller: search,
               hintText: 'Search Books, Authors, or ISBN',
             ),
@@ -106,28 +110,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 });
               },
             ),
-            SizedBox(
-              height: mediaQuery.height * 0.7,
-              child: GridView.builder(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: 0.75,
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15,
-                ),
-                itemCount: gridItemArr.length,
-                itemBuilder: (context, index) {
-                  Color color =
-                      TColor.gridColors[index % TColor.gridColors.length];
-                  return GridItem(
-                    itemColor: color,
-                    itemsObj: gridItemArr[index],
-                  );
-                },
-              ),
-            ),
+            CustomGridView(mediaQuery: mediaQuery, gridItemArr: gridItemArr),
           ],
         ),
       ),

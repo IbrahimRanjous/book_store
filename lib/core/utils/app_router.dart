@@ -1,16 +1,18 @@
-import 'package:book_store/Features/Presentation/cart/presentation/views/cart_view.dart';
-import 'package:book_store/Features/Presentation/home/presentation/views/home_view.dart';
-import 'package:book_store/Features/Presentation/mainTab/presentation/views/main_tab_view.dart';
-import 'package:book_store/Features/Presentation/menu/presentation/views/menu_view.dart';
-import 'package:book_store/Features/Presentation/onboarding/presentation/views/onboarding_view.dart';
-import 'package:book_store/Features/Presentation/onboarding/presentation/views/welcome_view.dart';
-import 'package:book_store/Features/Presentation/search/presentation/views/search_view.dart';
-import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/forgot_password_view.dart';
-import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/help_us_view.dart';
-import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/log_in_view.dart';
-import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../Features/Presentation/cart/presentation/views/cart_view.dart';
+import '../../Features/Presentation/home/presentation/views/home_view.dart';
+import '../../Features/Presentation/mainTab/presentation/views/main_tab_view.dart';
+import '../../Features/Presentation/menu/presentation/views/menu_view.dart';
+import '../../Features/Presentation/onboarding/presentation/views/onboarding_view.dart';
+import '../../Features/Presentation/onboarding/presentation/views/welcome_view.dart';
+import '../../Features/Presentation/search/presentation/views/search_view.dart';
+import '../../Features/Presentation/search/presentation/views/widgets/search_focus_view.dart';
+import '../../Features/Presentation/sign in/up/presentation/views/forgot_password_view.dart';
+import '../../Features/Presentation/sign in/up/presentation/views/help_us_view.dart';
+import '../../Features/Presentation/sign in/up/presentation/views/log_in_view.dart';
+import '../../Features/Presentation/sign in/up/presentation/views/sign_up_view.dart';
 
 class AppRouter {
   static const kWelcomeView = '/welcomeView';
@@ -21,10 +23,12 @@ class AppRouter {
   static const kMainTabView = '/mainTabView';
   static const kHomeView = '/homeView';
   static const kSearchView = '/searchView';
+  static const kSearchFocusView = '/searchFocusView';
   static const kMenuView = '/menuView';
   static const kCartView = '/cartView';
 
-  static final GlobalKey<ScaffoldState> sideMenuScaffoldKey = GlobalKey<ScaffoldState>();
+  static final GlobalKey<ScaffoldState> sideMenuScaffoldKey =
+      GlobalKey<ScaffoldState>();
 
   static final router = GoRouter(
     routes: [
@@ -55,15 +59,21 @@ class AppRouter {
       ),
       GoRoute(
         path: kMainTabView,
-        builder: (context, state) =>  MainTabView(sideMenuScaffoldKey:sideMenuScaffoldKey),
+        builder: (context, state) =>
+            MainTabView(sideMenuScaffoldKey: sideMenuScaffoldKey),
       ),
       GoRoute(
         path: kHomeView,
-        builder: (context, state) =>  HomeView(sideMenuScaffoldKey:sideMenuScaffoldKey),
+        builder: (context, state) =>
+            HomeView(sideMenuScaffoldKey: sideMenuScaffoldKey),
       ),
       GoRoute(
         path: kSearchView,
         builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: kSearchFocusView,
+        builder: (context, state) => const SearchFocusView(),
       ),
       GoRoute(
         path: kMenuView,
