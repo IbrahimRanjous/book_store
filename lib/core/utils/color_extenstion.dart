@@ -6,6 +6,7 @@ class TColor {
   static Color get text => const Color(0xff212121);
   static Color get subTitle => const Color(0xff212121).withOpacity(0.4);
   static Color get textBox => const Color(0xffEFEFEF).withOpacity(0.8);
+  static Color get sideMenu => const Color(0xffF3F3F3);
   static List<Color> get button => const [
         Color(0xff5ABD8c),
         Color(0xff00FF81),

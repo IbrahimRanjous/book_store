@@ -41,7 +41,7 @@ class _RecentlyViewedBodyState extends State<RecentlyViewedBody> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Best Sellers',
+                'Recently Viewed',
                 style: Styles.TextStyle24,
               ),
             ],

@@ -1,11 +1,10 @@
-import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
 import 'best_selles_body.dart';
 import 'build_align.dart';
 import 'build_app_bar.dart';
 import 'custom_carousel_slider.dart';
+import 'custom_drawer.dart';
 import 'genres_view_body.dart';
 import 'monthly_newsletter_body.dart';
 import 'recently_viewed_body.dart';
@@ -22,63 +21,48 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
+  int selectMenu = 0;
+  List menuArr = [
+    {
+      'name': 'Home',
+      'icon': Icons.home,
+    },
+    {
+      'name': 'Our Books',
+      'icon': Icons.menu_book,
+    },
+    {
+      'name': 'Our Stores',
+      'icon': Icons.storefront,
+    },
+    {
+      'name': 'Careers',
+      'icon': Icons.business_center,
+    },
+    {
+      'name': 'Sell With Us',
+      'icon': Icons.attach_money,
+    },
+    {
+      'name': 'News letter',
+      'icon': Icons.newspaper,
+    },
+    {
+      'name': 'Pop-up Leasing',
+      'icon': Icons.open_in_new,
+    },
+    {
+      'name': 'Account',
+      'icon': Icons.account_circle,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
-      endDrawer: Drawer(
-        child: Container(
-          decoration: const BoxDecoration(color: Colors.white),
-        ),
-      ),
-      // appBar: AppBar(
-      //   backgroundColor: TColor.primary,
-      //   title: const Text(
-      //     'Our Top Picks',
-      //     textAlign: TextAlign.start,
-      //   ),
-      // ),
-      // endDrawer: Drawer(
-      //   child: ListView(
-      //     padding: EdgeInsets.zero,
-      //     children: <Widget>[
-      //       DrawerHeader(
-      //         decoration: BoxDecoration(
-      //           color: Colors.blue,
-      //         ),
-      //         child: Text(
-      //           'Drawer Header',
-      //           style: TextStyle(
-      //             color: Colors.white,
-      //             fontSize: 24,
-      //           ),
-      //         ),
-      //       ),
-      //       ListTile(
-      //         leading: Icon(Icons.home),
-      //         title: Text('Home'),
-      //         onTap: () {
-      //           Navigator.pop(context);
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: Icon(Icons.settings),
-      //         title: Text('Settings'),
-      //         onTap: () {
-      //           Navigator.pop(context);
-      //         },
-      //       ),
-      //       ListTile(
-      //         leading: Icon(Icons.contact_mail),
-      //         title: Text('Contact'),
-      //         onTap: () {
-      //           Navigator.pop(context);
-      //         },
-      //       ),
-      //     ],
-      //   ),
-
-      // ),
+      endDrawer: CustomDrawer(
+          mediaQuery: mediaQuery, menuArr: menuArr, selectMenu: selectMenu),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

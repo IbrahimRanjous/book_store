@@ -20,10 +20,11 @@ abstract class Styles {
     fontWeight: FontWeight.normal,
   );
 
-  static const TextStyle20 = TextStyle(
+  static TextStyle TextStyle20 = TextStyle(
     fontSize: 20,
     fontFamily: kSFProText,
     fontWeight: FontWeight.w600,
+    color: TColor.text,
   );
 
   static const TextStyle24 = TextStyle(
