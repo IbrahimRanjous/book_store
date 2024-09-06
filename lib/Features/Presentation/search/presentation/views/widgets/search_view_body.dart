@@ -1,4 +1,6 @@
 import 'package:book_store/Features/Presentation/search/presentation/views/widgets/custom_text_search.dart';
+import 'package:book_store/Features/Presentation/search/presentation/views/widgets/grid_item.dart';
+import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
 import 'horizontal_filter_list.dart';
 
@@ -29,9 +31,60 @@ class _SearchViewBodyState extends State<SearchViewBody> {
       'name': 'Recently Viewed',
     },
   ];
+  List gridItemArr = [
+    {
+      'name': 'Biography',
+      'image': 'assets/images/Biography.png',
+    },
+    {
+      'name': 'Business',
+      'image': 'assets/images/Business.png',
+    },
+    {
+      'name': 'Children',
+      'image': 'assets/images/Children.png',
+    },
+    {
+      'name': 'Cookery',
+      'image': 'assets/images/Cookery.png',
+    },
+    {
+      'name': 'Fiction',
+      'image': 'assets/images/Fiction.png',
+    },
+    {
+      'name': 'Graphic Novels',
+      'image': 'assets/images/Graphic Novels.png',
+    },
+    {
+      'name': 'Biography',
+      'image': 'assets/images/Biography.png',
+    },
+    {
+      'name': 'Business',
+      'image': 'assets/images/Business.png',
+    },
+    {
+      'name': 'Children',
+      'image': 'assets/images/Children.png',
+    },
+    {
+      'name': 'Cookery',
+      'image': 'assets/images/Cookery.png',
+    },
+    {
+      'name': 'Fiction',
+      'image': 'assets/images/Fiction.png',
+    },
+    {
+      'name': 'Graphic Novels',
+      'image': 'assets/images/Graphic Novels.png',
+    },
+  ];
   TextEditingController search = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    Size mediaQuery = MediaQuery.of(context).size;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -52,6 +105,28 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                   selectMenu = index;
                 });
               },
+            ),
+            SizedBox(
+              height: mediaQuery.height * 0.7,
+              child: GridView.builder(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 0.75,
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 15,
+                ),
+                itemCount: gridItemArr.length,
+                itemBuilder: (context, index) {
+                  Color color =
+                      TColor.gridColors[index % TColor.gridColors.length];
+                  return GridItem(
+                    itemColor: color,
+                    itemsObj: gridItemArr[index],
+                  );
+                },
+              ),
             ),
           ],
         ),
