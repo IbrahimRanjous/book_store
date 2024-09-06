@@ -24,7 +24,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -53,6 +53,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               height: 15,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
                   onPressed: () {
@@ -67,10 +68,12 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                     color: isStayLoggedIn ? TColor.primary : TColor.subTitle,
                   ),
                 ),
-                Text('Stay Logged In',
-                    style: Styles.TextStyle15.copyWith(
-                      color: TColor.subTitle.withOpacity(.5),
-                    )),
+                Text(
+                  'Stay Logged In',
+                  style: Styles.TextStyle12.copyWith(
+                    color: TColor.subTitle.withOpacity(.5),
+                  ),
+                ),
                 const Spacer(),
                 TextButton(
                   style: ButtonStyle(
@@ -80,7 +83,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                     context.push(AppRouter.kForgotPasswordView);
                   },
                   child: Text('Forgot Your Password?',
-                      style: Styles.TextStyle15.copyWith(
+                      style: Styles.TextStyle12.copyWith(
                         color: TColor.primary,
                       )),
                 ),

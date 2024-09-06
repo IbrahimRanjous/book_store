@@ -2,12 +2,15 @@ import 'package:book_store/Features/Presentation/home/presentation/views/widgets
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
-
+  const HomeView({
+    super.key,
+    required this.sideMenuScaffoldKey,
+  });
+  final GlobalKey<ScaffoldState> sideMenuScaffoldKey;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: HomeViewBody(),
+    return Scaffold(
+      body: HomeViewBody(sideMenuScaffoldKey: sideMenuScaffoldKey),
     );
   }
 }

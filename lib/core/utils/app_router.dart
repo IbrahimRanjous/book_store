@@ -9,6 +9,7 @@ import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/help_us_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/log_in_view.dart';
 import 'package:book_store/Features/Presentation/sign%20in/up/presentation/views/sign_up_view.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRouter {
@@ -22,6 +23,9 @@ class AppRouter {
   static const kSearchView = '/searchView';
   static const kMenuView = '/menuView';
   static const kCartView = '/cartView';
+
+  static final GlobalKey<ScaffoldState> sideMenuScaffoldKey = GlobalKey<ScaffoldState>();
+
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -51,11 +55,11 @@ class AppRouter {
       ),
       GoRoute(
         path: kMainTabView,
-        builder: (context, state) => const MainTabView(),
+        builder: (context, state) =>  MainTabView(sideMenuScaffoldKey:sideMenuScaffoldKey),
       ),
       GoRoute(
         path: kHomeView,
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) =>  HomeView(sideMenuScaffoldKey:sideMenuScaffoldKey),
       ),
       GoRoute(
         path: kSearchView,

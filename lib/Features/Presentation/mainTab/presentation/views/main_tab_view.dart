@@ -1,13 +1,16 @@
 import 'package:book_store/Features/Presentation/cart/presentation/views/cart_view.dart';
-import 'package:book_store/Features/Presentation/home/presentation/views/home_view.dart';
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/home_view_body.dart';
 import 'package:book_store/Features/Presentation/menu/presentation/views/menu_view.dart';
 import 'package:book_store/Features/Presentation/search/presentation/views/search_view.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+import '../../../home/presentation/views/home_view.dart';
 
 class MainTabView extends StatefulWidget {
-  const MainTabView({super.key});
-
+  const MainTabView({super.key, required this.sideMenuScaffoldKey});
+  final GlobalKey<ScaffoldState> sideMenuScaffoldKey;
   @override
   State<MainTabView> createState() => _MainTabViewState();
 }
@@ -27,11 +30,11 @@ class _MainTabViewState extends State<MainTabView>
     return Scaffold(
       body: TabBarView(
         controller: controller,
-        children: const [
-          HomeView(),
-          SearchView(),
-          MenuView(),
-          CartView(),
+        children: [
+          HomeView(sideMenuScaffoldKey: widget.sideMenuScaffoldKey),
+          const SearchView(),
+          const MenuView(),
+          const CartView(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
