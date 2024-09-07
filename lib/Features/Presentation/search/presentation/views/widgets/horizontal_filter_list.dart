@@ -18,7 +18,7 @@ class HorizontalFilterList extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(
           children: filterArr.map((tag) {
             var index = filterArr.indexOf(tag);

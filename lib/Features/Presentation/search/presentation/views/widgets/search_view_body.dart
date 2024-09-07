@@ -1,7 +1,5 @@
-import 'package:book_store/Features/Presentation/search/presentation/views/widgets/custom_text_search.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import '../../../../../../core/utils/app_router.dart';
+import 'package:flutter/services.dart';
 import 'custom_grid_view.dart';
 import 'horizontal_filter_list.dart';
 
@@ -15,7 +13,7 @@ class SearchViewBody extends StatefulWidget {
 class _SearchViewBodyState extends State<SearchViewBody> {
   int selectMenu = 0;
 
-  List filterArr = [
+  final List _filterArr = [
     {
       'name': 'Genre',
     },
@@ -32,7 +30,8 @@ class _SearchViewBodyState extends State<SearchViewBody> {
       'name': 'Recently Viewed',
     },
   ];
-  List gridItemArr = [
+
+  final List _gridItemArr = [
     {
       'name': 'Biography',
       'image': 'assets/images/Biography.png',
@@ -91,18 +90,8 @@ class _SearchViewBodyState extends State<SearchViewBody> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            const SizedBox(
-              height: 30,
-            ),
-            CustomTextSearch(
-              onTap: () {
-                context.push(AppRouter.kSearchFocusView);
-              },
-              controller: search,
-              hintText: 'Search Books, Authors, or ISBN',
-            ),
             HorizontalFilterList(
-              filterArr: filterArr,
+              filterArr: _filterArr,
               selectMenu: selectMenu,
               onItemTap: (index) {
                 setState(() {
@@ -110,7 +99,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 });
               },
             ),
-            CustomGridView(mediaQuery: mediaQuery, gridItemArr: gridItemArr),
+            CustomGridView(mediaQuery: mediaQuery, gridItemArr: _gridItemArr),
           ],
         ),
       ),

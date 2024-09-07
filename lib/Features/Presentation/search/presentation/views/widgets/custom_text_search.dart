@@ -8,13 +8,17 @@ class CustomTextSearch extends StatelessWidget {
     required this.controller,
     required this.hintText,
     this.obscureText = false,
-    this.onTap,
+    this.onChanged,
+    this.onSearch,
+    this.onSubmitted,
   });
 
   final TextEditingController controller;
   final String hintText;
   final bool obscureText;
-  final Function()? onTap;
+  final void Function(String)? onChanged;
+  final void Function()? onSearch;
+  final void Function(String)? onSubmitted;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,12 +27,15 @@ class CustomTextSearch extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
-        onTap: onTap,
+        keyboardType: TextInputType.text,
+        onChanged: onChanged,
+        onSubmitted: onSubmitted,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-          prefixIcon: const Icon(
-            (Icons.search),
+          prefixIcon: IconButton(
+            onPressed: onSearch,
+            icon: const Icon(Icons.search),
           ),
           suffixIcon: IconButton(
             onPressed: () {},

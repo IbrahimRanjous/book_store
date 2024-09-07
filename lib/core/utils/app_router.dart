@@ -8,7 +8,6 @@ import '../../Features/Presentation/menu/presentation/views/menu_view.dart';
 import '../../Features/Presentation/onboarding/presentation/views/onboarding_view.dart';
 import '../../Features/Presentation/onboarding/presentation/views/welcome_view.dart';
 import '../../Features/Presentation/search/presentation/views/search_view.dart';
-import '../../Features/Presentation/search/presentation/views/widgets/search_focus_view.dart';
 import '../../Features/Presentation/sign in/up/presentation/views/forgot_password_view.dart';
 import '../../Features/Presentation/sign in/up/presentation/views/help_us_view.dart';
 import '../../Features/Presentation/sign in/up/presentation/views/log_in_view.dart';
@@ -23,8 +22,7 @@ class AppRouter {
   static const kMainTabView = '/mainTabView';
   static const kHomeView = '/homeView';
   static const kSearchView = '/searchView';
-  static const kSearchFocusView = '/searchFocusView';
-  static const kMenuView = '/menuView';
+   static const kMenuView = '/menuView';
   static const kCartView = '/cartView';
 
   static final GlobalKey<ScaffoldState> sideMenuScaffoldKey =
@@ -35,7 +33,7 @@ class AppRouter {
       GoRoute(
         //this '/' let the GoRoute know what is the first screen to view
         path: '/',
-        builder: (context, state) => const OnboardingView(),
+        builder: (context, state) => const SearchView(),
       ),
       GoRoute(
         path: kWelcomeView,
@@ -71,10 +69,7 @@ class AppRouter {
         path: kSearchView,
         builder: (context, state) => const SearchView(),
       ),
-      GoRoute(
-        path: kSearchFocusView,
-        builder: (context, state) => const SearchFocusView(),
-      ),
+      
       GoRoute(
         path: kMenuView,
         builder: (context, state) => const MenuView(),
