@@ -59,6 +59,6 @@ class _RecentlyViewedBodyState extends State<RecentlyViewedBody> {
         ),
       ],
     );
-    ;
+    
   }
 }

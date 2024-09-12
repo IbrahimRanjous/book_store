@@ -6,8 +6,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/color_extenstion.dart';
 
-class bottomPartBody extends StatelessWidget {
-  const bottomPartBody({
+class BottomPartBody extends StatelessWidget {
+  const BottomPartBody({
     super.key,
     required this.mediaQuery,
     required this.pageArr,
@@ -32,12 +32,13 @@ class bottomPartBody extends StatelessWidget {
             children: [
               CustomTextButton(
                 onPressed: () => context.go(AppRouter.kWelcomeView),
-                text: 'Skip', color: TColor.primary,
+                text: 'Skip',
+                color: TColor.primary,
               ),
               SizedBox(
                 width: mediaQuery.width * .05,
               ),
-              dotsSideShow(
+              DotsSideShow(
                 pageArr: pageArr,
                 page: increasePage,
                 mediaQuery: mediaQuery,
@@ -54,7 +55,8 @@ class bottomPartBody extends StatelessWidget {
                     context.go(AppRouter.kWelcomeView);
                   }
                 },
-                text: 'Next', color: TColor.primary,
+                text: 'Next',
+                color: TColor.primary,
               ),
               SizedBox(
                 height: mediaQuery.height * .12,

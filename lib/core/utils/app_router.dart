@@ -22,7 +22,7 @@ class AppRouter {
   static const kMainTabView = '/mainTabView';
   static const kHomeView = '/homeView';
   static const kSearchView = '/searchView';
-   static const kMenuView = '/menuView';
+  static const kMenuView = '/menuView';
   static const kCartView = '/cartView';
 
   static final GlobalKey<ScaffoldState> sideMenuScaffoldKey =
@@ -33,7 +33,7 @@ class AppRouter {
       GoRoute(
         //this '/' let the GoRoute know what is the first screen to view
         path: '/',
-        builder: (context, state) => const SearchView(),
+        builder: (context, state) => const OnboardingView(),
       ),
       GoRoute(
         path: kWelcomeView,
@@ -69,7 +69,6 @@ class AppRouter {
         path: kSearchView,
         builder: (context, state) => const SearchView(),
       ),
-      
       GoRoute(
         path: kMenuView,
         builder: (context, state) => const MenuView(),

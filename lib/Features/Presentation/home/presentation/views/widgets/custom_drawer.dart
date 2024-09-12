@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../onboarding/presentation/views/widgets/custom_text_botton.dart';
 
+// ignore: must_be_immutable
 class CustomDrawer extends StatefulWidget {
   CustomDrawer({
     super.key,

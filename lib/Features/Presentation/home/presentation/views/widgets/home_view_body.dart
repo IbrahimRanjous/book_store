@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'best_selles_body.dart';
 import 'build_align.dart';
 import 'build_app_bar.dart';
@@ -71,7 +70,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               Stack(
                 alignment: Alignment.topCenter,
                 children: [
-                  buildAlign(mediaQuery: mediaQuery),
+                  BuildAlign(mediaQuery: mediaQuery),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [

@@ -1,8 +1,8 @@
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
 
-class buildAlign extends StatelessWidget {
-  const buildAlign({
+class BuildAlign extends StatelessWidget {
+  const BuildAlign({
     super.key,
     required this.mediaQuery,
   });

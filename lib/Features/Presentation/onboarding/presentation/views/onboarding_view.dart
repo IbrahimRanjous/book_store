@@ -65,7 +65,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      customText(
+                      CustomText(
                         text: pObJ['title'].toString(),
                         textStyle: Styles.TextStyle30.copyWith(
                           color: TColor.primary,
@@ -74,7 +74,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       const SizedBox(
                         height: 15,
                       ),
-                      customText(
+                      CustomText(
                         text: pObJ['sub_title'].toString(),
                         textStyle:
                             Styles.TextStyle12.copyWith(color: TColor.primary),
@@ -93,7 +93,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 );
               },
             ),
-            bottomPartBody(
+            BottomPartBody(
               mediaQuery: mediaQuery,
               pageArr: pageArr,
               page: page,

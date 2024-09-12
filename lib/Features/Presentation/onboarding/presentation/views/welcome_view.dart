@@ -31,7 +31,7 @@ class WelcomeView extends StatelessWidget {
                   SizedBox(
                     height: mediaQuery.width * .25,
                   ),
-                  customText(
+                  CustomText(
                     text: 'Books For \nEvery Taste',
                     textStyle: Styles.TextStyle30.copyWith(
                       color: TColor.primary,
@@ -40,14 +40,14 @@ class WelcomeView extends StatelessWidget {
                   SizedBox(
                     height: mediaQuery.width * .25,
                   ),
-                  customMaterialButton(
+                  CustomMaterialButton(
                     text: 'Log in',
                     onPressed: () => context.push(AppRouter.kLogInView),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  customMaterialButton(
+                  CustomMaterialButton(
                     text: 'Sign up',
                     onPressed: () => context.push(AppRouter.kSignUpView),
                   ),

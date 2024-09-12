@@ -9,11 +9,11 @@ class ClickableItem extends StatelessWidget {
   final VoidCallback onTap;
 
   const ClickableItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.isSelected,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ClickableItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Text(
           name,
-          style: Styles.TextStyle24.copyWith(
+          style: Styles.TextStyle20.copyWith(
             color: isSelected ? TColor.text : TColor.subTitle,
           ),
         ),

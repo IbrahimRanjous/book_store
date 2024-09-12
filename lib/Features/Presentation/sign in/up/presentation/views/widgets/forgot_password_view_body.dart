@@ -31,7 +31,7 @@ class _ForgotPasswordViewBodyState extends State<ForgotPasswordViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: email,
               hintText: 'Email Address',
               keyboardType: TextInputType.emailAddress,

@@ -2,8 +2,8 @@ import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class customTextFiled extends StatelessWidget {
-  const customTextFiled({
+class CustomTextFiled extends StatelessWidget {
+  const CustomTextFiled({
     super.key,
     required this.controller,
     required this.hintText,

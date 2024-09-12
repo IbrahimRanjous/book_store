@@ -1,10 +1,13 @@
 import 'package:book_store/Features/Presentation/search/presentation/views/widgets/list_view_search_results.dart';
+import 'package:book_store/core/utils/extention.dart';
 import 'package:flutter/material.dart';
 import 'widgets/custom_text_search.dart';
 import 'widgets/search_view_body.dart';
 
 class SearchView extends StatefulWidget {
-  const SearchView({super.key});
+  const SearchView({
+    super.key,
+  });
 
   @override
   State<SearchView> createState() => _SearchViewState();
@@ -63,19 +66,36 @@ class _SearchViewState extends State<SearchView> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.white,
           titleSpacing: 20,
-          toolbarHeight: 100,
-          title: CustomTextSearch(
-            controller: _controller,
-            hintText: 'Search Books, Authors, or ISBN',
-            onChanged: _filterItems,
-            onSearch: _addSearchItem,
-            onSubmitted: (value) => _addSearchItem(),
+          toolbarHeight: 80,
+          title: Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: CustomTextSearch(
+              controller: _controller,
+              hintText: 'Search Books, Authors, or ISBN',
+              onChanged: _filterItems,
+              onSearch: _addSearchItem,
+              onSubmitted: (value) => _addSearchItem(),
+              onTap: () {
+                isClicked = true;
+
+                endEditing();
+              },
+            ),
           ),
         ),
         body: isClicked
-            ? ListViewSearchResults(itemsArr: _filteredItems)
+            ? ListViewSearchResults(
+                itemsArr: _filteredItems,
+                didSearch: (sText) {
+                  _controller.text = sText;
+                  if (mounted) {
+                    setState(() {});
+                  }
+                },
+              )
             : const SearchViewBody(),
       ),
     );

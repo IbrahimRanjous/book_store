@@ -1,8 +1,8 @@
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
 
-class customMaterialButton extends StatelessWidget {
-  const customMaterialButton({
+class CustomMaterialButton extends StatelessWidget {
+  const CustomMaterialButton({
     super.key,
     required this.text,
     required this.onPressed,

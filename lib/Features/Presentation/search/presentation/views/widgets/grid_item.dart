@@ -1,6 +1,5 @@
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class GridItem extends StatelessWidget {
   const GridItem({super.key, required this.itemsObj, required this.itemColor});
@@ -42,7 +41,7 @@ class GridItem extends StatelessWidget {
               itemsObj['image'],
               fit: BoxFit.cover,
               alignment: Alignment.center,
-              width: mediaQuery.width * .6,
+              width: mediaQuery.width * .3,
               height: mediaQuery.width * .4,
             ),
           ),

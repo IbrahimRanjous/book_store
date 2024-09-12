@@ -1,4 +1,3 @@
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item.dart';
 import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item_with_rating.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';

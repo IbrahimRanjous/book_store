@@ -1,8 +1,8 @@
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
 
-class dotsSideShow extends StatelessWidget {
-  const dotsSideShow({
+class DotsSideShow extends StatelessWidget {
+  const DotsSideShow({
     super.key,
     required this.pageArr,
     required this.page,

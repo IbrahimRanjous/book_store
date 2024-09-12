@@ -35,7 +35,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: name,
               hintText: 'First & Last Name',
               keyboardType: TextInputType.name,
@@ -43,7 +43,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: email,
               hintText: 'Email Address',
               keyboardType: TextInputType.emailAddress,
@@ -51,7 +51,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: phonenumber,
               hintText: 'Phone Number',
               keyboardType: TextInputType.phone,
@@ -59,7 +59,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: password,
               hintText: 'Password',
               keyboardType: TextInputType.visiblePassword,

@@ -4,11 +4,11 @@ import 'clickable_item.dart';
 
 class HorizontalFilterList extends StatelessWidget {
   const HorizontalFilterList({
-    Key? key,
+    super.key,
     required this.filterArr,
     required this.selectMenu,
     required this.onItemTap,
-  }) : super(key: key);
+  });
   final List filterArr;
   final int selectMenu;
   final Function(int index) onItemTap;
@@ -18,7 +18,7 @@ class HorizontalFilterList extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.only(bottom: 5),
         child: Row(
           children: filterArr.map((tag) {
             var index = filterArr.indexOf(tag);

@@ -11,6 +11,7 @@ class CustomTextSearch extends StatelessWidget {
     this.onChanged,
     this.onSearch,
     this.onSubmitted,
+    this.onTap,
   });
 
   final TextEditingController controller;
@@ -19,6 +20,7 @@ class CustomTextSearch extends StatelessWidget {
   final void Function(String)? onChanged;
   final void Function()? onSearch;
   final void Function(String)? onSubmitted;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +30,7 @@ class CustomTextSearch extends StatelessWidget {
       ),
       child: TextField(
         keyboardType: TextInputType.text,
+        onTap: onTap,
         onChanged: onChanged,
         onSubmitted: onSubmitted,
         controller: controller,

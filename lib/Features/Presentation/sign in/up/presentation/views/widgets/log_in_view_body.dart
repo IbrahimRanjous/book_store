@@ -35,7 +35,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: email,
               hintText: 'Email Address',
               keyboardType: TextInputType.emailAddress,
@@ -43,7 +43,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
             const SizedBox(
               height: 15,
             ),
-            customTextFiled(
+            CustomTextFiled(
               controller: password,
               hintText: 'Password',
               keyboardType: TextInputType.visiblePassword,

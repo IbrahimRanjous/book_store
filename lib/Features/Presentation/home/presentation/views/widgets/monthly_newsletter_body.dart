@@ -2,9 +2,7 @@ import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/widgets/custom_botton.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:go_router/go_router.dart';
+  import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/styles.dart';
 import '../../../../sign in/up/presentation/views/widgets/custom_text_field.dart';
@@ -76,7 +74,7 @@ class _MonthlyNewsletterBodyState extends State<MonthlyNewsletterBody> {
                 SizedBox(
                   height: screenSize.height * 0.02,
                 ),
-                customTextFiled(
+                CustomTextFiled(
                   controller: name,
                   hintText: 'Name',
                   keyboardType: TextInputType.name,
@@ -84,7 +82,7 @@ class _MonthlyNewsletterBodyState extends State<MonthlyNewsletterBody> {
                 SizedBox(
                   height: screenSize.height * 0.02,
                 ),
-                customTextFiled(
+                CustomTextFiled(
                   controller: email,
                   hintText: 'Email Address',
                   keyboardType: TextInputType.emailAddress,

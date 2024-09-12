@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:book_store/constants.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';

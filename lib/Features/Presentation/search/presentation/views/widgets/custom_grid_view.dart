@@ -16,7 +16,7 @@ class CustomGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: mediaQuery.height * 0.7,
+      height: mediaQuery.height * 0.8,
       child: GridView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
