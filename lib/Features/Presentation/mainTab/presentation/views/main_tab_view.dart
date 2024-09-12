@@ -1,10 +1,12 @@
+import 'package:book_store/comming_soon_view.dart';
+
 import '../../../cart/presentation/views/cart_view.dart';
 import '../../../home/presentation/views/home_view.dart';
 import '../../../menu/presentation/views/menu_view.dart';
 import '../../../search/presentation/views/search_view.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:flutter/material.dart';
- 
+
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key, required this.sideMenuScaffoldKey});
   final GlobalKey<ScaffoldState> sideMenuScaffoldKey;
@@ -31,8 +33,8 @@ class _MainTabViewState extends State<MainTabView>
           children: [
             HomeView(sideMenuScaffoldKey: widget.sideMenuScaffoldKey),
             const SearchView(),
-            const MenuView(),
-            const CartView(),
+            const CommingSoonView(),
+            const CommingSoonView(),
           ],
         ),
         bottomNavigationBar: BottomAppBar(

@@ -1,4 +1,5 @@
-import 'package:book_store/Features/Presentation/book_reading/presentation/views/book_reading_view.dart';
+import 'package:book_store/Features/Presentation/account/presentation/views/account_view.dart';
+import 'package:book_store/Features/Presentation/our%20book/presentation/views/our_book_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,6 +14,7 @@ import '../../Features/Presentation/sign in/up/presentation/views/forgot_passwor
 import '../../Features/Presentation/sign in/up/presentation/views/help_us_view.dart';
 import '../../Features/Presentation/sign in/up/presentation/views/log_in_view.dart';
 import '../../Features/Presentation/sign in/up/presentation/views/sign_up_view.dart';
+import '../../comming_soon_view.dart';
 
 class AppRouter {
   static const kWelcomeView = '/welcomeView';
@@ -25,6 +27,9 @@ class AppRouter {
   static const kSearchView = '/searchView';
   static const kMenuView = '/menuView';
   static const kCartView = '/cartView';
+  static const kOurBookView = '/ourBookView';
+  static const kAccountView = '/accountView';
+  static const KCommingSoonView = '/commingSoonView';
 
   static final GlobalKey<ScaffoldState> sideMenuScaffoldKey =
       GlobalKey<ScaffoldState>();
@@ -34,7 +39,7 @@ class AppRouter {
       GoRoute(
         //this '/' let the GoRoute know what is the first screen to view
         path: '/',
-        builder: (context, state) => const LogInView(),
+        builder: (context, state) => const OnboardingView(),
       ),
       GoRoute(
         path: kWelcomeView,
@@ -77,6 +82,18 @@ class AppRouter {
       GoRoute(
         path: kCartView,
         builder: (context, state) => const CartView(),
+      ),
+      GoRoute(
+        path: kOurBookView,
+        builder: (context, state) => const OurBookView(),
+      ),
+      GoRoute(
+        path: kAccountView,
+        builder: (context, state) => const AccountView(),
+      ),
+      GoRoute(
+        path: KCommingSoonView,
+        builder: (context, state) => const CommingSoonView(),
       ),
     ],
   );

@@ -1,3 +1,4 @@
+import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,25 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       splashColor: TColor.primary,
                       onTap: () {
                         setState(() {
+                          switch (index) {
+                            case 0:
+                              context.go(AppRouter.kHomeView);
+                            case 1:
+                              context.push(AppRouter.kOurBookView);
+                            case 2:
+                              context.push(AppRouter.KCommingSoonView);
+                            case 3:
+                              context.push(AppRouter.KCommingSoonView);
+                            case 4:
+                              context.push(AppRouter.KCommingSoonView);
+                            case 5:
+                              context.push(AppRouter.KCommingSoonView);
+                            case 6:
+                              context.push(AppRouter.KCommingSoonView);
+                            case 7:
+                              context.push(AppRouter.kAccountView);
+                          }
+
                           widget.selectMenu = index;
                         });
                         // context.pop();
@@ -115,14 +135,16 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     ),
                     CustomTextButton(
                       text: 'Terms',
-                      onPressed: () => context.pop(), color: TColor.primary,
+                      onPressed: () => context.pop(),
+                      color: TColor.primary,
                     ),
                     SizedBox(
                       width: mediaQuery.width * 0.05,
                     ),
                     CustomTextButton(
                       text: 'Privacy',
-                      onPressed: () => context.pop(), color: TColor.primary,
+                      onPressed: () => context.pop(),
+                      color: TColor.primary,
                     ),
                   ],
                 ),
