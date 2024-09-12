@@ -53,7 +53,8 @@ class _SearchViewState extends State<SearchView> {
   void _addSearchItem() {
     setState(() {
       if (_controller.text.isNotEmpty &&
-          !_enteredItems.contains(_controller.text)) {
+          !_enteredItems.contains(_controller.text) &&
+          !_allItems.contains(_controller.text)) {
         _enteredItems.add(_controller.text);
         _filterItems(_controller.text);
       }
@@ -79,8 +80,6 @@ class _SearchViewState extends State<SearchView> {
               onSearch: _addSearchItem,
               onSubmitted: (value) => _addSearchItem(),
               onTap: () {
-                isClicked = true;
-
                 endEditing();
               },
             ),
@@ -92,7 +91,9 @@ class _SearchViewState extends State<SearchView> {
                 didSearch: (sText) {
                   _controller.text = sText;
                   if (mounted) {
-                    setState(() {});
+                    setState(() {
+                      isClicked = false;
+                    });
                   }
                 },
               )

@@ -1,3 +1,4 @@
+import 'package:book_store/Features/Presentation/book_reading/presentation/views/book_reading_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,7 +34,7 @@ class AppRouter {
       GoRoute(
         //this '/' let the GoRoute know what is the first screen to view
         path: '/',
-        builder: (context, state) => const OnboardingView(),
+        builder: (context, state) => const LogInView(),
       ),
       GoRoute(
         path: kWelcomeView,

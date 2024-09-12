@@ -18,13 +18,13 @@ class GridItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        // mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 8,
-          ),
+          // const SizedBox(
+          //   height: 8,
+          // ),
           Text(
             itemsObj['name'],
             style: Styles.TextStyle15.copyWith(
@@ -32,8 +32,8 @@ class GridItem extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: mediaQuery.width * 0.05,
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(16),

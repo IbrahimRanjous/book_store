@@ -1,4 +1,5 @@
-import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item_with_rating.dart';
+import 'package:book_store/Features/Presentation/book_reading/presentation/views/book_reading_view.dart';
+ import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item_with_rating.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -54,8 +55,20 @@ class _BestSellesBodyState extends State<BestSellesBody> {
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
             scrollDirection: Axis.horizontal,
             itemCount: bestSellerArr.length,
-            itemBuilder: (context, index) =>
-                BookItemWithRating(itemsObj: bestSellerArr[index]),
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BookReadingView(
+                      objBookReading: bestSellerArr[index],
+                    ),
+                  ),
+                );
+              },
+              child: BookItemWithRating(
+                itemsObj: bestSellerArr[index],
+              ),
+            ),
           ),
         ),
       ],
