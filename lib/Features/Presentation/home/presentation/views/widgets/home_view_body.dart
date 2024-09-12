@@ -70,7 +70,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               Stack(
                 alignment: Alignment.topCenter,
                 children: [
-                  BuildAlign(mediaQuery: mediaQuery),
+                  BuildAlign(
+                    mediaQuery: mediaQuery,
+                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [

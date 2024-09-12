@@ -55,26 +55,26 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       borderRadius: BorderRadius.circular(16),
                       splashColor: TColor.primary,
                       onTap: () {
-                        setState(() {
-                          switch (index) {
-                            case 0:
-                              context.go(AppRouter.kHomeView);
-                            case 1:
-                              context.push(AppRouter.kOurBookView);
-                            case 2:
-                              context.push(AppRouter.KCommingSoonView);
-                            case 3:
-                              context.push(AppRouter.KCommingSoonView);
-                            case 4:
-                              context.push(AppRouter.KCommingSoonView);
-                            case 5:
-                              context.push(AppRouter.KCommingSoonView);
-                            case 6:
-                              context.push(AppRouter.KCommingSoonView);
-                            case 7:
-                              context.push(AppRouter.kAccountView);
-                          }
+                        switch (index) {
+                          case 0:
+                            context.pop();
+                          case 1:
+                            context.push(AppRouter.kOurBookView);
+                          case 2:
+                            context.push(AppRouter.KCommingSoonView);
+                          case 3:
+                            context.push(AppRouter.KCommingSoonView);
+                          case 4:
+                            context.push(AppRouter.KCommingSoonView);
+                          case 5:
+                            context.push(AppRouter.KCommingSoonView);
+                          case 6:
+                            context.push(AppRouter.KCommingSoonView);
+                          case 7:
+                            context.push(AppRouter.kAccountView);
+                        }
 
+                        setState(() {
                           widget.selectMenu = index;
                         });
                         // context.pop();

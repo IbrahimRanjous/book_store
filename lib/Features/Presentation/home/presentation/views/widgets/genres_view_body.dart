@@ -34,7 +34,7 @@ class _GenresViewBodyState extends State<GenresViewBody> {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: const Row(
+          child:   Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(

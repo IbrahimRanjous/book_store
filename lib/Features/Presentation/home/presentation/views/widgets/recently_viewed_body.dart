@@ -37,7 +37,7 @@ class _RecentlyViewedBodyState extends State<RecentlyViewedBody> {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
@@ -59,6 +59,5 @@ class _RecentlyViewedBodyState extends State<RecentlyViewedBody> {
         ),
       ],
     );
-    
   }
 }

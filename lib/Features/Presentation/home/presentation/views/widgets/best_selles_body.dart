@@ -1,5 +1,5 @@
 import 'package:book_store/Features/Presentation/book_reading/presentation/views/book_reading_view.dart';
- import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item_with_rating.dart';
+import 'package:book_store/Features/Presentation/home/presentation/views/widgets/book_item_with_rating.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class _BestSellesBodyState extends State<BestSellesBody> {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(

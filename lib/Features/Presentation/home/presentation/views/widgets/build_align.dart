@@ -8,7 +8,6 @@ class BuildAlign extends StatelessWidget {
   });
 
   final Size mediaQuery;
-
   @override
   Widget build(BuildContext context) {
     return Align(

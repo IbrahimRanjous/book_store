@@ -2,7 +2,7 @@ import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/color_extenstion.dart';
 import 'package:book_store/core/widgets/custom_botton.dart';
 import 'package:flutter/material.dart';
-  import 'package:go_router/go_router.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/styles.dart';
 import '../../../../sign in/up/presentation/views/widgets/custom_text_field.dart';
@@ -27,7 +27,7 @@ class _MonthlyNewsletterBodyState extends State<MonthlyNewsletterBody> {
         children: [
           Container(
             padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
