@@ -26,9 +26,9 @@ class _MainTabViewState extends State<MainTabView>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: TabBarView(
+    return Scaffold(
+      body: SafeArea(
+        child: TabBarView(
           controller: controller,
           children: [
             HomeView(sideMenuScaffoldKey: widget.sideMenuScaffoldKey),
@@ -37,45 +37,45 @@ class _MainTabViewState extends State<MainTabView>
             const CommingSoonView(),
           ],
         ),
-        bottomNavigationBar: BottomAppBar(
-          color: TColor.primary,
-          child: TabBar(
-            dividerColor: Colors.transparent,
-            indicatorColor: Colors.transparent,
-            unselectedLabelColor: Colors.white,
-            labelColor: TColor.text,
-            controller: controller,
-            tabs: const [
-              Tab(
-                icon: Icon(
-                  Icons.home,
-                  size: 30,
-                ),
-                text: 'Home',
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: TColor.primary,
+        child: TabBar(
+          dividerColor: Colors.transparent,
+          indicatorColor: Colors.transparent,
+          unselectedLabelColor: Colors.white,
+          labelColor: TColor.text,
+          controller: controller,
+          tabs: const [
+            Tab(
+              icon: Icon(
+                Icons.home,
+                size: 30,
               ),
-              Tab(
-                icon: Icon(
-                  Icons.search,
-                  size: 30,
-                ),
-                text: 'Search',
+              text: 'Home',
+            ),
+            Tab(
+              icon: Icon(
+                Icons.search,
+                size: 30,
               ),
-              Tab(
-                icon: Icon(
-                  Icons.menu,
-                  size: 30,
-                ),
-                text: 'Menu',
+              text: 'Search',
+            ),
+            Tab(
+              icon: Icon(
+                Icons.menu,
+                size: 30,
               ),
-              Tab(
-                icon: Icon(
-                  Icons.shopping_bag,
-                  size: 30,
-                ),
-                text: 'Cart',
+              text: 'Menu',
+            ),
+            Tab(
+              icon: Icon(
+                Icons.shopping_bag,
+                size: 30,
               ),
-            ],
-          ),
+              text: 'Cart',
+            ),
+          ],
         ),
       ),
     );
