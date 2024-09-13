@@ -1,6 +1,10 @@
+import 'package:book_store/comming_soon_view.dart';
+import 'package:book_store/core/utils/app_router.dart';
 import 'package:book_store/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../book_reading/presentation/views/book_reading_view.dart';
 import 'recently_viewed_item.dart';
 
 class RecentlyViewedBody extends StatefulWidget {
@@ -53,8 +57,20 @@ class _RecentlyViewedBodyState extends State<RecentlyViewedBody> {
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 3),
             scrollDirection: Axis.horizontal,
             itemCount: recentlyArr.length,
-            itemBuilder: (context, index) =>
-                RecentlyViewedItem(itemsObj: recentlyArr[index]),
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BookReadingView(
+                      objBookReading: recentlyArr[index],
+                    ),
+                  ),
+                );
+              },
+              child: RecentlyViewedItem(
+                itemsObj: recentlyArr[index],
+              ),
+            ),
           ),
         ),
       ],

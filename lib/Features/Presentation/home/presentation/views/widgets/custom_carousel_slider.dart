@@ -4,6 +4,8 @@ import 'package:book_store/Features/Presentation/home/presentation/views/widgets
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+import '../../../../book_reading/presentation/views/book_reading_view.dart';
+
 class CustomCarouselSlider extends StatefulWidget {
   const CustomCarouselSlider({
     super.key,
@@ -44,7 +46,20 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
         itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
           return SizedBox(
             width: widget.mediaQuery.width * .32,
-            child: BookItem(itemsObj: topPickArr[itemIndex]),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BookReadingView(
+                      objBookReading: topPickArr[itemIndex],
+                    ),
+                  ),
+                );
+              },
+              child: BookItem(
+                itemsObj: topPickArr[itemIndex],
+              ),
+            ),
           );
         },
         options: CarouselOptions(

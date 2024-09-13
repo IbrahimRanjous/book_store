@@ -64,7 +64,11 @@ class _BookReadingViewState extends State<BookReadingView> {
                 widget.objBookReading['name'].toString(),
                 style: Styles.TextStyle20.copyWith(
                   color: isDark ? Colors.white : TColor.text,
+                  // overflow: TextOverflow.ellipsis,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
               ),
               leading: IconButton(
                 onPressed: () {
