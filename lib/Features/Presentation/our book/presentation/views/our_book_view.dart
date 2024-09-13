@@ -50,11 +50,16 @@ class _OurBookViewState extends State<OurBookView> {
                   height: mediaQuery.width * 0.9,
                   alignment: Alignment.bottomCenter,
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: imagesArr.map((iName) {
+                        bool isFirst = imagesArr.first == iName;
+                        bool isLast = imagesArr.last == iName;
                         return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 15),
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
+                          padding: EdgeInsets.only(
+                              left: isFirst ? 15 : 0, right: isLast ? 15 : 0),
                           child: Image.asset(
                             iName,
                             height: 120,
